@@ -3,7 +3,8 @@ import { NativeModule, requireNativeModule } from 'expo';
 import { NotificationListenerModuleEvents } from './NotificationListener.types';
 
 declare class NotificationListenerModule extends NativeModule<NotificationListenerModuleEvents> {
-  hello(): string;
+  hasPermission(): boolean;
+  requestPermission(): void;
 }
 
 export default requireNativeModule<NotificationListenerModule>('NotificationListener');
